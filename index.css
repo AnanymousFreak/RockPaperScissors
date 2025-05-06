@@ -1,0 +1,149 @@
+/* Base light theme */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    color: #111;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Header layout */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  /* Title centered */
+  h1 {
+    flex: 1;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  /* Theme and reset buttons */
+  header .themeToggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    margin-left: 5px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+  
+  /* Align buttons to top-right */
+  header > button {
+    position: absolute;
+    top: 10px;
+  }
+  
+  /* Theme toggle button */
+  header > button#toggle-theme {
+    right: 50px;
+  }
+  
+  /* Reload/reset button */
+  header > button:not(#toggle-theme) {
+    right: 10px;
+  }
+  
+  /* Theme button hover effects */
+  body:not(.dark-theme) .themeToggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  body.dark-theme .themeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Choices layout */
+  .choices {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  
+  .choices button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .choices button:hover {
+    transform: scale(1.05);
+  }
+  
+  .choices img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.3s;
+  }
+  
+  /* Score and message */
+  #score {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  #message {
+    font-size: 1rem;
+    text-align: center;
+    min-height: 24px;
+    color: #555;
+  }
+  
+  /* Dark theme */
+  body.dark-theme {
+    background-image: radial-gradient(#ef32d9, #89fffd);
+    color: #f5f5f5;
+  }
+  
+  body.dark-theme #message {
+    color: #ffffff;
+  }
+  
+  /* Make image backgrounds transparent in dark mode */
+  body.dark-theme .choices img {
+    filter: brightness(0.9) contrast(1.1);
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header > button {
+      position: static;
+      margin: 5px;
+    }
+  
+    h1 {
+      order: -1;
+      font-size: 1.4rem;
+    }
+  
+    .choices {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .choices img {
+      max-width: 120px;
+    }
+  
+    #score, #message {
+      font-size: 1rem;
+    }
+  }
+  
